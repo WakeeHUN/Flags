@@ -1,0 +1,7 @@
+Tamás,25,59
+Dezső,16,37
+Géza,31,75
+John,14,28
+George,17,37
+Tamás,19,46
+Ismeretlen,16,35
