@@ -207,4 +207,5 @@ def toplista():
 
         ui.button("🔙 Vissza a főoldalra", on_click=lambda: ui.navigate.to('/'))
 
-ui.run(storage_secret='titkoskod2000', reload=False)
+port = int(os.environ.get("PORT", 8080))
+ui.run(host='0.0.0.0', port=port, storage_secret='titkoskod2000', reload=False)
