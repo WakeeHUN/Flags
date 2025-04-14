@@ -103,12 +103,12 @@ def jatek():
                 def hide_cards(i1, i2):
                     buttons[i1].clear()
                     with buttons[i1]:
-                        ui.image('flags/question.png').style('width: 100%; height: 100%')
+                        ui.image('static/flags/question.png').style('width: 100%; height: 100%')
                     labels[i1].set_text("")
 
                     buttons[i2].clear()
                     with buttons[i2]:
-                        ui.image('flags/question.png').style('width: 100%; height: 100%')
+                        ui.image('static/flags/question.png').style('width: 100%; height: 100%')
                     labels[i2].set_text("")
 
                     revealed.clear()
@@ -125,7 +125,7 @@ def jatek():
                     revealed.append(index)
                     buttons[index].clear()
                     with buttons[index]:
-                        ui.image(f'flags/{card_flags[index]}.png').style('width: 100%; height: 100%')
+                        ui.image(f'static/flags/{card_flags[index]}.png').style('width: 100%; height: 100%')
                     labels[index].set_text(flags_hun[card_flags[index]])
 
                     if len(revealed) == 2:
@@ -156,7 +156,7 @@ def jatek():
                                 index = row * NUM_COLS + col
                                 with ui.column().classes('items-center').style('width: 100px; height: 80px'):
                                     with ui.button(on_click=lambda i=index: on_card_click(i)).style('padding: 0; width: 80px; height: 50px') as btn:
-                                        ui.image('flags/question.png').style('width: 100%; height: 100%')
+                                        ui.image('static/flags/question.png').style('width: 100%; height: 100%')
                                     lbl = ui.label("").style()
                                 buttons.append(btn)
                                 labels.append(lbl)
@@ -206,6 +206,7 @@ def toplista():
                     ui.label(f"{idx}. {name} – {steps} lépés")
 
         ui.button("🔙 Vissza a főoldalra", on_click=lambda: ui.navigate.to('/'))
+
 
 port = int(os.environ.get("PORT", 8080))
 ui.run(host='0.0.0.0', port=port, storage_secret='titkoskod2000', reload=False)
